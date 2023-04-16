@@ -36,6 +36,7 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .skilled {
@@ -125,6 +126,24 @@ body {
       padding: 0 16px 80px;
       list-style-type: none;
 
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 24px;
+        height: 100%;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          align-items: flex-start;
+          gap: 16px;
+          height: 100%;
+        }
+      }
+
       li:first-of-type {
         background: @gradient-orange-pink;
         padding: 24px 29px 32px 28px;
@@ -146,7 +165,6 @@ body {
 
         img {
           margin-top: -32px;
-          margin-bottom: 24px;
         }
 
         h3 {
@@ -172,6 +190,11 @@ body {
           font-size: 18px;
           line-height: 28px;
           color: @bright-pink;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: @light-pink;
+          }
         }
       }
     }
@@ -179,10 +202,13 @@ body {
 
   &__footer {
     background-color: @navy-blue;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 36px 16px;
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     img {
       width: 89px;
@@ -245,6 +271,152 @@ body {
 
     &__footer {
       padding: 36px 40px;
+    }
+  }
+}
+
+// Desktop
+@media (min-width: 1440px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .skilled {
+    &__button {
+      &--blue {
+        font-size: 18px;
+        width: 167px;
+        height: 56px;
+        border-radius: 28px;
+      }
+
+      &--orange-pink {
+        font-size: 18px;
+        width: 167px;
+        height: 56px;
+        border-radius: 31.5px;
+      }
+
+      &--blue-pink {
+        font-size: 18px;
+        width: 167px;
+        height: 56px;
+        border-radius: 28px;
+      }
+    }
+
+    &__header {
+      margin: 0 auto;
+      max-width: 1110px;
+
+      img {
+        width: 114px;
+      }
+    }
+
+    &__main {
+      overflow-x: visible;
+      padding: 0;
+      grid-template-columns: 476px 991px;
+      max-width: 1110px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 56px;
+        line-height: 71px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+
+      aside {
+        & > picture > img {
+          margin-top: -150px;
+          margin-right: -120px;
+          width: 991px;
+          height: 936px;
+        }
+      }
+    }
+
+    &__courses {
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        row-gap: 80px;
+        max-width: 1110px;
+        margin: 0 auto;
+
+        section {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 24px;
+          height: 100%;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: flex-start;
+            gap: 16px;
+            height: 100%;
+          }
+        }
+
+        li:first-of-type {
+          padding: 65px 32px 0 32px;
+          border-radius: 20px;
+          margin-top: 16px;
+
+          h2 {
+            font-size: 32px;
+            line-height: 40px;
+          }
+        }
+
+        li:not(li:first-of-type) {
+          background: @white;
+          box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+          border-radius: 15px;
+          padding: 0px 32px 40px 32px;
+
+          img {
+            margin-top: -32px;
+            margin-bottom: 8px;
+          }
+
+          h3 {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 0;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1110px;
+        margin: 0 auto;
+
+        img {
+          width: 114px;
+        }
+      }
     }
   }
 }
